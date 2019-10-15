@@ -3,9 +3,9 @@ from colored import attr
 
 reset = attr('reset')
 
-attempt = 1
-score = 0
-scores = [] 
+Попытки = 1
+Очко = 1
+Очки = [] 
 
 while attempt <= 5:
   rannum = randint(1, 6)
