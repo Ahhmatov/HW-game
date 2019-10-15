@@ -1,0 +1,51 @@
+from random import randint
+from colored import attr
+
+reset = attr('reset')
+
+attempt = 1
+score = 0
+scores = [] 
+
+while attempt <= 5:
+  rannum = randint(1, 6)
+  usnum = int(input("выбери число между 1 и 6:> "))
+  diff = abs(usnum - rannum)
+  attempt += 1
+
+  print("Разница между вашим числом и числом ПК", str(diff) + reset, "\n")
+  
+  print("Число ПК", str(rannum) + reset, "\n")
+
+  if diff == 0:
+    score = 6
+    scores.append(score)
+  elif diff == 1:
+    score = 5
+    scores.append(score)
+  elif diff == 2:
+    score = 4
+    scores.append(score)
+  elif diff == 3:
+    score = 3
+    scores.append(score)
+  elif diff == 4:
+    score = 2
+    scores.append(score)
+  elif diff == 5:
+    score = 1
+    scores.append(score)
+  else:
+    score = 0
+
+  totalscore = sum(scores)
+
+  print("Ты набрал",  str(score) + reset, "очков\n")
+print("Кол-во набранных вами очков", str(totalscore) + reset, "\n")
+
+if totalscore < 25:
+  print("Потрачено" + reset, "\n")
+  print( "К сожелению ты не набрал достатачное кол-во очков. Попробуй с начала!" + reset)
+
+else:
+  print("Мои поздравления" + reset)
